@@ -1,0 +1,32 @@
+CREATE INDEX "audit_logs_user_id_idx" ON "audit_logs" USING btree ("user_id");--> statement-breakpoint
+CREATE INDEX "audit_logs_created_at_idx" ON "audit_logs" USING btree ("created_at");--> statement-breakpoint
+CREATE INDEX "disbursements_invitation_id_idx" ON "disbursements" USING btree ("invitation_id");--> statement-breakpoint
+CREATE INDEX "disbursements_payment_account_id_idx" ON "disbursements" USING btree ("payment_account_id");--> statement-breakpoint
+CREATE INDEX "events_invitation_id_idx" ON "events" USING btree ("invitation_id");--> statement-breakpoint
+CREATE INDEX "events_start_at_idx" ON "events" USING btree ("start_at");--> statement-breakpoint
+CREATE INDEX "gallery_items_invitation_id_idx" ON "gallery_items" USING btree ("invitation_id");--> statement-breakpoint
+CREATE INDEX "gallery_items_order_idx" ON "gallery_items" USING btree ("invitation_id","order_index");--> statement-breakpoint
+CREATE INDEX "gifts_invitation_id_idx" ON "gifts" USING btree ("invitation_id");--> statement-breakpoint
+CREATE INDEX "guests_invitation_id_idx" ON "guests" USING btree ("invitation_id");--> statement-breakpoint
+CREATE INDEX "guests_tenant_id_idx" ON "guests" USING btree ("tenant_id");--> statement-breakpoint
+CREATE UNIQUE INDEX "guests_invitation_token_idx" ON "guests" USING btree ("invitation_id","slug_token");--> statement-breakpoint
+CREATE INDEX "invitations_tenant_id_idx" ON "invitations" USING btree ("tenant_id");--> statement-breakpoint
+CREATE INDEX "invitations_status_idx" ON "invitations" USING btree ("status");--> statement-breakpoint
+CREATE INDEX "invitations_slug_status_idx" ON "invitations" USING btree ("slug","status");--> statement-breakpoint
+CREATE INDEX "payment_accounts_tenant_id_idx" ON "payment_accounts" USING btree ("tenant_id");--> statement-breakpoint
+CREATE INDEX "rsvps_invitation_id_idx" ON "rsvps" USING btree ("invitation_id");--> statement-breakpoint
+CREATE INDEX "rsvps_attendance_idx" ON "rsvps" USING btree ("invitation_id","attendance");--> statement-breakpoint
+CREATE INDEX "stories_invitation_id_idx" ON "stories" USING btree ("invitation_id");--> statement-breakpoint
+CREATE INDEX "stories_order_idx" ON "stories" USING btree ("invitation_id","order_index");--> statement-breakpoint
+CREATE INDEX "subscription_invoices_tenant_id_idx" ON "subscription_invoices" USING btree ("tenant_id");--> statement-breakpoint
+CREATE INDEX "subscriptions_tenant_id_idx" ON "subscriptions" USING btree ("tenant_id");--> statement-breakpoint
+CREATE INDEX "subscriptions_status_idx" ON "subscriptions" USING btree ("status");--> statement-breakpoint
+CREATE INDEX "tenants_owner_user_id_idx" ON "tenants" USING btree ("owner_user_id");--> statement-breakpoint
+CREATE INDEX "transactions_invitation_id_idx" ON "transactions" USING btree ("invitation_id");--> statement-breakpoint
+CREATE INDEX "transactions_tenant_id_idx" ON "transactions" USING btree ("tenant_id");--> statement-breakpoint
+CREATE INDEX "transactions_status_idx" ON "transactions" USING btree ("status");--> statement-breakpoint
+CREATE INDEX "users_role_idx" ON "users" USING btree ("role");--> statement-breakpoint
+CREATE INDEX "webhook_events_gateway_ref_idx" ON "webhook_events" USING btree ("gateway_ref");--> statement-breakpoint
+CREATE INDEX "wishes_invitation_id_idx" ON "wishes" USING btree ("invitation_id");--> statement-breakpoint
+CREATE INDEX "wishes_approved_idx" ON "wishes" USING btree ("invitation_id","is_approved");--> statement-breakpoint
+CREATE INDEX "wishes_created_at_idx" ON "wishes" USING btree ("created_at");
