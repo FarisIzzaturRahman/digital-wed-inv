@@ -1,0 +1,1 @@
+ALTER TABLE "wishes" ALTER COLUMN "is_approved" SET DEFAULT false;

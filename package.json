@@ -1,0 +1,18 @@
+{
+  "name": "surat-digital-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx pnpm --filter web dev",
+    "build": "npx pnpm --filter shared build && npx pnpm --filter db build && npx pnpm --filter templates build && npx pnpm --filter web build",
+    "db:generate": "npx pnpm --filter db generate",
+    "db:migrate": "npx pnpm --filter db migrate",
+    "db:seed": "npx pnpm --filter db seed",
+    "db:studio": "npx pnpm --filter db studio",
+    "lint": "npx pnpm --recursive lint",
+    "format": "npx pnpm --recursive format"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
